@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { Fragment, useContext, useEffect, useMemo, useRef } from "react";
+import Layout from "./components/layout";
+import { AppContextAPI } from "./context/AppContext";
 
-function App() {
+const App = () => {
+  const { state } = useContext(AppContextAPI);
+  const item = state.list[state.active];
+  const ref = useRef(null);
+  const audioRef = useMemo(() => new Audio(), []);
+
+  useEffect(() => {
+    ref.current.classList.remove("active");
+    audioRef.src = item.audio;
+    audioRef.play();
+    const timeout = setTimeout(() => {
+      ref.current.classList.add("active");
+    }, 100);
+
+    return () => {
+      clearTimeout(timeout);
+      audioRef.pause();
+      audioRef.currentTime = 0;
+    };
+  }, [audioRef, item]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <div className="bg-image">
+        <img ref={ref} src={item.bg} alt="" />
+      </div>
+      <Layout />
+    </Fragment>
   );
-}
+};
 
 export default App;

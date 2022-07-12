@@ -1,0 +1,20 @@
+footer {
+  margin: 72px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    p {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      color: #fcfcfc;
+      margin: 0;
+    }
+  }
+}

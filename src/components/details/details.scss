@@ -1,0 +1,43 @@
+.details {
+  margin-top: 42px;
+
+  h4 {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    margin: 0;
+    margin-bottom: 16px;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+
+    > div {
+      small {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: #e6e6e6;
+      }
+      h5 {
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 37px;
+        margin: 0;
+        margin-top: 16px;
+      }
+      .with-icon {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 16px;
+
+        h5 {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+.categories {
+  margin-top: 37px;
+  margin-bottom: 86px;
+
+  h3 {
+    font-weight: 600;
+    font-size: 33px;
+    line-height: 40px;
+    color: #e6e6e6;
+    margin: 0;
+  }
+
+  .nav-wrapper {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+    margin-top: 32px;
+
+    button {
+      background: transparent;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+      color: #b3b3b3;
+      border: none;
+      width: fit-content;
+      height: fit-content;
+      cursor: pointer;
+
+      &.active {
+        color: #ffffff;
+      }
+
+      &.prev {
+        transform: rotate(-180deg);
+      }
+    }
+
+    .list {
+      max-width: 280px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 1/0.1;
+
+      > div {
+        display: flex;
+        gap: 48px;
+        align-items: center;
+        width: fit-content;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+      }
+    }
+  }
+}
