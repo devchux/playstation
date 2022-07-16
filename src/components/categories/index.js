@@ -7,7 +7,7 @@ import "./categories.scss";
 const Categories = () => {
   const { sort, state, playNav } = useContext(AppContextAPI);
   const list = useMemo(
-    () => ["All", "Sports", "Adventure", "Action", "Puzzle", "Racing"],
+    () => ["All", "Sports", "Adventure", "Action", "Racing"],
     []
   );
   const ref = useRef(null);
