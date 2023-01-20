@@ -1,8 +1,8 @@
 .game {
-  width: 229.84px;
-  height: 250px;
+  width: 22.984rem;
+  height: 25rem;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 2rem;
   background: #0053e9;
   cursor: pointer;
   transition: all 0.2s ease-out;
@@ -14,11 +14,11 @@
   }
 
   &.active {
-    width: 330.97px;
-    height: 360px;
-    box-shadow: 0px 24px 32px rgba(0, 83, 233, 0.14),
-      0px 16px 24px rgba(0, 83, 233, 0.1), 0px 2px 6px rgba(0, 83, 233, 0.08),
-      0px 0px 1px rgba(0, 0, 0, 0.04);
+    width: 33.097rem;
+    height: 36rem;
+    box-shadow: 0 2.4rem 3.2rem rgba(0, 83, 233, 0.14),
+      0 1.6rem 2.4rem rgba(0, 83, 233, 0.1),
+      0 0.2rem 0.6rem rgba(0, 83, 233, 0.08), 0 0 0.1rem rgba(0, 0, 0, 0.04);
     transition: all 0.2s ease-in;
   }
 

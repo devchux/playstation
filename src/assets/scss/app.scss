@@ -1,6 +1,9 @@
 * {
   transition: all 0.2s ease;
 }
+html {
+  font-size: calc(100vw * 10 /1440);
+}
 body {
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;

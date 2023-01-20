@@ -1,26 +1,26 @@
 .categories {
-  margin-top: 37px;
-  margin-bottom: 86px;
+  margin-top: 3.7rem;
+  margin-bottom: 8.6rem;
 
   h3 {
     font-weight: 600;
-    font-size: 33px;
-    line-height: 40px;
+    font-size: 3.3rem;
+    line-height: 4rem;
     color: #e6e6e6;
     margin: 0;
   }
 
   .nav-wrapper {
     display: flex;
-    gap: 48px;
+    gap: 2.4rem;
     align-items: center;
-    margin-top: 32px;
+    margin-top: 3.2rem;
 
     button {
       background: transparent;
       font-weight: 600;
-      font-size: 14px;
-      line-height: 17px;
+      font-size: 1.4rem;
+      line-height: 1.7rem;
       color: #b3b3b3;
       border: none;
       width: fit-content;
@@ -37,7 +37,7 @@
     }
 
     .list {
-      max-width: 280px;
+      max-width: 28rem;
       width: 100%;
       overflow: hidden;
       position: relative;
@@ -45,7 +45,7 @@
 
       > div {
         display: flex;
-        gap: 48px;
+        gap: 4.8rem;
         align-items: center;
         width: fit-content;
         position: absolute;
