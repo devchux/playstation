@@ -89,34 +89,43 @@ const AppContext = ({ children }) => {
 
   const loadMedia = () => {
     let progress = 0;
-    allMedia.images.forEach(async (url) => {
-      const response = await fetch(url);
-      const image = new Image();
 
-      image.onload = () => {
-        progress += 1;
-      };
+    const onLoad = () => {
+      progress += 1;
+      const assets = [...allMedia.images, ...allMedia.audios].length;
+      document.querySelector(".preloader p").innerHTML = `${Math.floor(
+        (progress * 100) / assets
+      )}%`;
 
-      image.onerror = (e) => {
-        console.log("img-err", url, progress, e.message);
-      };
-      image.src = response.url;
-    });
-    allMedia.audios.forEach(async (url) => {
-      const response = await fetch(url);
-      const audio = new Audio();
+      if (progress === assets) {
+        onContentLoaded();
+      }
+    };
 
-      audio.oncanplaythrough = () => {
-        progress += 1;
+    Object.keys(allMedia).forEach((key) => {
+      allMedia[key].forEach(async (url) => {
+        const response = await fetch(url);
+        if (key === "images") {
+          const image = new Image();
 
-        if (progress === [...allMedia.images, ...allMedia.audios].length) {
-          onContentLoaded();
+          image.onload = onLoad;
+
+          image.onerror = (e) => {
+            console.log("image-err", url);
+          };
+          image.src = response.url;
         }
-      };
-      audio.onerror = () => {
-        console.log("err", url, progress);
-      };
-      audio.src = response.url;
+
+        if (key === "audios") {
+          const audio = new Audio();
+
+          audio.oncanplaythrough = onLoad;
+          audio.onerror = () => {
+            console.log("audio-err", url);
+          };
+          audio.src = response.url;
+        }
+      });
     });
   };
 

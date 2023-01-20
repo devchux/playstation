@@ -14,6 +14,7 @@ const App = () => {
   useEffect(() => {
     let timeout;
     if (ref.current && state.contentHasLoaded) {
+      document.querySelector(".preloader").classList.add("loaded");
       ref.current.classList.remove("active");
       audioRef.src = item.audio;
       audioRef.play();
@@ -31,16 +32,10 @@ const App = () => {
 
   return (
     <Fragment>
-      {!state.contentHasLoaded ? (
-        <h3>Content is Loading. Please wait...</h3>
-      ) : (
-        <>
-          <div className="bg-image">
-            <img ref={ref} src={item.bg} alt="" />
-          </div>
-          <Layout />
-        </>
-      )}
+      <div className="bg-image">
+        <img ref={ref} src={item.bg} alt="" />
+      </div>
+      <Layout />
     </Fragment>
   );
 };

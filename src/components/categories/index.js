@@ -18,28 +18,31 @@ const Categories = () => {
         <button
           className="prev"
           onClick={() => {
-            ref.current.style.left = `${ref.current.scrollLeft}px`;
+            ref.current.style.transform = `translateX(${ref.current.scrollLeft}px)`;
             playNav();
           }}
         >
           <NextIcon />
         </button>
         <div className="list">
-            <div ref={ref}>
-          {list.map((item) => (
-            <button
-              onClick={() => sort(item)}
-              key={item}
-              className={state.sortBy === item ? "active" : ""}
-            >
-              {item}
-            </button>
-          ))}</div>
+          <div ref={ref}>
+            {list.map((item) => (
+              <button
+                onClick={() => sort(item)}
+                key={item}
+                className={state.sortBy === item ? "active" : ""}
+              >
+                {item}
+              </button>
+            ))}
+          </div>
         </div>
         <button
           className="next"
           onClick={() => {
-            ref.current.style.left = `-${(ref.current.clientWidth + 48) / 2}px`;
+            ref.current.style.transform = `translateX(-${
+              (ref.current.clientWidth + 48) / 2
+            }px)`;
             playNav();
           }}
         >

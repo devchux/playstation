@@ -20,7 +20,7 @@ const List = () => {
 
   return (
     <div className="game-list">
-      <div style={{ marginLeft: state.left }}>
+      <div style={{ transform: `translateX(${state.left})` }}>
         {state.filter.map((game, i) => (
           <Game
             active={state.active === i}
