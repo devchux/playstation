@@ -6,7 +6,7 @@ const initialState = {
   active: 0,
   filter: GAMES,
   sortBy: "All",
-  left: "auto",
+  left: "0",
   contentHasLoaded: false,
 };
 
@@ -30,7 +30,7 @@ const reducer = (state = initialState, action) => {
         filter,
         sortBy: action.payload,
         active: 0,
-        left: "auto",
+        left: "0",
       };
     case "CONTENT_LOADED":
       return { ...state, contentHasLoaded: true };
