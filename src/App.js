@@ -4,7 +4,10 @@ import { AppContextAPI } from "./context/AppContext";
 
 const App = () => {
   const { state } = useContext(AppContextAPI);
-  const item = state.list[state.active];
+  const item =
+    state.sortBy === "all"
+      ? state.list[state.active]
+      : state.filter[state.active];
   const ref = useRef(null);
   const audioRef = useMemo(() => new Audio(), []);
 
