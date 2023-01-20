@@ -9,26 +9,35 @@ const App = () => {
   const audioRef = useMemo(() => new Audio(), []);
 
   useEffect(() => {
-    ref.current.classList.remove("active");
-    audioRef.src = item.audio;
-    audioRef.play();
-    const timeout = setTimeout(() => {
-      ref.current.classList.add("active");
-    }, 100);
+    let timeout;
+    if (ref.current && state.contentHasLoaded) {
+      ref.current.classList.remove("active");
+      audioRef.src = item.audio;
+      audioRef.play();
+      timeout = setTimeout(() => {
+        ref.current.classList.add("active");
+      }, 100);
+    }
 
     return () => {
       clearTimeout(timeout);
       audioRef.pause();
       audioRef.currentTime = 0;
     };
-  }, [audioRef, item]);
+  }, [audioRef, item, state.contentHasLoaded]);
 
   return (
     <Fragment>
-      <div className="bg-image">
-        <img ref={ref} src={item.bg} alt="" />
-      </div>
-      <Layout />
+      {!state.contentHasLoaded ? (
+        <h3>Content is Loading. Please wait...</h3>
+      ) : (
+        <>
+          <div className="bg-image">
+            <img ref={ref} src={item.bg} alt="" />
+          </div>
+          <Layout />
+        </>
+      )}
     </Fragment>
   );
 };

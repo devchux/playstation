@@ -39,16 +39,16 @@ export const GAMES = [
     earnedTitle: "Wolfblood",
     audio: '/audio/witcher.mp3'
   },
-  {
-    name: "Horizon Zero Dawn",
-    category: ["Adventure", "Action"],
-    img: "/images/horizon-small.png",
-    bg: "/images/horizon-big.png",
-    time: "12 hrs 21 mins",
-    progression: "49",
-    earnedTitle: "King of Wanderers",
-    audio: '/audio/horizon.mp3'
-  },
+  // {
+  //   name: "Horizon Zero Dawn",
+  //   category: ["Adventure", "Action"],
+  //   img: "/images/horizon-small.png",
+  //   bg: "/images/horizon-big.png",
+  //   time: "12 hrs 21 mins",
+  //   progression: "49",
+  //   earnedTitle: "King of Wanderers",
+  //   audio: '/audio/horizon.mp3'
+  // },
   {
     name: "Ea Fifa",
     category: ["Sports"],
