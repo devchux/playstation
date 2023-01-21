@@ -27,7 +27,7 @@ const Navbar = () => {
       <div className="right">
         <div className="info">
           <div className="profile">
-            <img src="/images/profile.png" width="40" height="40" alt="" />
+            <img src="/images/profile.png" alt="" />
           </div>
           <div className="name-icons">
             <h6>Knight of Kazzar</h6>

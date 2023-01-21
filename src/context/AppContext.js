@@ -15,8 +15,8 @@ const reducer = (state = initialState, action) => {
     case "ACTIVE":
       return {
         ...state,
-        active: action.payload,
-        left: `-${278 * action.payload}px`,
+        active: action.payload.num,
+        left: `-${action.payload.dist}px`,
       };
     case "ADD":
       return { ...state, list: [...state.list, action.payload] };
@@ -55,7 +55,12 @@ const AppContext = ({ children }) => {
   };
 
   const setActive = (num) => {
-    dispatch({ type: "ACTIVE", payload: num });
+    const game = document.querySelectorAll(".game")[0];
+    const factor = num <= 1 ? -48 : 48 * num
+    dispatch({
+      type: "ACTIVE",
+      payload: { num, dist: game.getBoundingClientRect().width * num + factor },
+    });
     playNav();
   };
   const addGame = (game) => dispatch({ type: "ADD", payload: game });

@@ -1,5 +1,13 @@
 html {
   font-size: calc(100vw * 10 /1440);
+
+  @media only screen and (max-width: 800px) {
+    font-size: calc(100vw * 10 /800);
+  }
+
+  @media only screen and (max-width: 680px) {
+    font-size: calc(100vw * 10 /680);
+  }
 }
 body {
   font-family: "Montserrat", sans-serif;
@@ -20,15 +28,13 @@ button {
 }
 
 .bg-image {
-  position: absolute;
   top: 0;
   left: 0;
-//   bottom: 0;
   width: 100%;
   min-height: 100%;
   z-index: -2;
   overflow: hidden;
-  position: absolute;
+  position: fixed;
 
   img {
     width: 100%;
