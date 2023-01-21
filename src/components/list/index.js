@@ -18,9 +18,16 @@ const List = () => {
     };
   }, [setActive, state]);
 
+  const getDisplacement = () => {
+    const factor = state.active <= 1 ? 48 : -48 * state.active;
+    const dist = (state.left + factor) / 10;
+
+    return `translateX(${dist}rem)`;
+  };
+
   return (
     <div className="game-list">
-      <div style={{ transform: `translateX(${state.left})` }}>
+      <div style={{ transform: getDisplacement() }}>
         {state.filter.map((game, i) => (
           <Game
             active={state.active === i}

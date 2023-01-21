@@ -27,6 +27,11 @@
       height: fit-content;
       cursor: pointer;
 
+      > svg {
+        width: 1.067rem;
+        height: 1.7rem;
+      }
+
       &.active {
         color: #ffffff;
       }

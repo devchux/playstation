@@ -1,4 +1,4 @@
-import { Fragment, useContext, useEffect, useMemo, useRef } from "react";
+import { useContext, useEffect, useMemo, useRef } from "react";
 import Layout from "./components/layout";
 import { AppContextAPI } from "./context/AppContext";
 
@@ -31,12 +31,17 @@ const App = () => {
   }, [audioRef, item, state.contentHasLoaded]);
 
   return (
-    <Fragment>
-      <div className="bg-image">
-        <img ref={ref} src={item.bg} alt="" />
+    <div className="app-wrapper">
+      <div className="mobile-warning">
+        <p> Only available on desktop 😊.</p>
       </div>
-      <Layout />
-    </Fragment>
+      <div className="main">
+        <div className="bg-image">
+          <img ref={ref} src={item.bg} alt="" />
+        </div>
+        <Layout />
+      </div>
+    </div>
   );
 };
 
