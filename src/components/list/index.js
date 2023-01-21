@@ -19,7 +19,7 @@ const List = () => {
   }, [setActive, state]);
 
   const getDisplacement = () => {
-    const factor = state.active <= 1 ? 48 : -48 * state.active;
+    const factor = state.active <= 1 ? 72 : -36 * state.active;
     const dist = (state.left + factor) / 10;
 
     return `translateX(${dist}rem)`;
