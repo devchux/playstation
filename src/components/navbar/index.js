@@ -11,7 +11,7 @@ import "./navbar.scss";
 
 const Navbar = () => {
   const navList = useMemo(
-    () => ["Home", "Games", "Trophes", "Favourites", "Shop"],
+    () => ["Home", "Games", "Trophies", "Favourites", "Shop"],
     []
   );
   return (
